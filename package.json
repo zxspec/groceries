@@ -1,0 +1,23 @@
+{
+  "name": "groceries",
+  "version": "1.0.0",
+  "description": "Groceries Search",
+  "main": "index.js",
+  "scripts": {
+    "srv": "node src/server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zxspec/groceries.git"
+  },
+  "author": "Dmytro Iievliev <ievlevdmitriy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zxspec/groceries/issues"
+  },
+  "homepage": "https://github.com/zxspec/groceries#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
