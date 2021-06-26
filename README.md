@@ -9,4 +9,4 @@
 ## Configuration
 
 Configuration example in `.env.example`;  
-Rename `.env.example` to `.env` and adjust configuration parameters
+In `settings` folder, rename `.env.example` to `.env` and adjust configuration parameters.

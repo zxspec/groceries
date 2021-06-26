@@ -21,7 +21,9 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: "./.env", to: DIST_FOLDER, noErrorOnMissing: true }],
+      patterns: [
+        { from: "./settings/.env", to: DIST_FOLDER, noErrorOnMissing: true },
+      ],
     }),
   ],
   resolve: {
