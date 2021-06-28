@@ -5,7 +5,6 @@ import routes from "./routes";
 
 export function getBaseRouter() {
   const router = createRouter(routes, {
-    trailingSlashMode: "default",
     defaultRoute: "404",
   });
 
