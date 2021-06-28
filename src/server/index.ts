@@ -7,7 +7,7 @@ import type { Grocery } from "../types/Grocery";
 import fakeGroceriesData from "./mock/groceries.json";
 import { extractSearchPhrase, filterGroceriesByName } from "./api/filtering";
 import createRouter from "../router/router";
-import contentRenderer from "./helpers/contentRenderer";
+import { render } from "./helpers/contentRenderer";
 
 const ENV_PATH = path.resolve(__dirname, ".env");
 console.debug("### ENV_PATH: ", ENV_PATH);
@@ -34,7 +34,7 @@ app.get("*", (req: Request, res: Response) => {
     if (error) {
       res.status(500).send(error);
     } else {
-      const content = contentRenderer({ router });
+      const content = render({ router });
       res.set("content-type", "text/html");
       res.send(content);
     }

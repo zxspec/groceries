@@ -6,7 +6,7 @@ import { renderToString } from "react-dom/server";
 import App from "../../client/App";
 
 type Props = { router: Router };
-export default ({ router }: Props) => {
+export function render({ router }: Props) {
   const AppWithRouter = (
     <RouterProvider router={router}>
       <App />
@@ -27,4 +27,4 @@ export default ({ router }: Props) => {
         </body>
         </html>
     `;
-};
+}

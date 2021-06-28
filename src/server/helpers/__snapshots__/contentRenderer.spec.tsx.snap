@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contentRenderer should create wrap \`App\` with \`RouterProvider\` 1`] = `
+"
+        <!DOCTYPE html>
+        <html lang=\\"en\\">
+        <head>
+            <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">
+            <title>Document</title>
+        </head>
+        <body>
+            <div id=\\"react-root\\">undefined</div>
+        </body>
+        </html>
+    "
+`;
+
+exports[`contentRenderer should use \`renderToString()\` to render server-side content 1`] = `
+"
+        <!DOCTYPE html>
+        <html lang=\\"en\\">
+        <head>
+            <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">
+            <title>Document</title>
+        </head>
+        <body>
+            <div id=\\"react-root\\">undefined</div>
+        </body>
+        </html>
+    "
+`;
