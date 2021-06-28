@@ -1,4 +1,3 @@
-import { Request } from "express";
 import { Query } from "express-serve-static-core";
 
 import { Grocery } from "../types/Grocery";

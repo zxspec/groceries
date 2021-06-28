@@ -5,7 +5,7 @@ import { cloneRouter } from "router5";
 
 import type { Grocery } from "./types/Grocery";
 import fakeGroceriesData from "./mock/groceries.json";
-import { extractSearchPhrase, filterGroceriesByName } from "./hepers/filtering";
+import { extractSearchPhrase, filterGroceriesByName } from "./api/filtering";
 import createRouter from "../router/router";
 import contentRenderer from "./hepers/contentRenderer";
 
