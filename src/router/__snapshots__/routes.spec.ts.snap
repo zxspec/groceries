@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`routes should have correct routes 1`] = `
+Array [
+  Object {
+    "name": "home",
+    "path": "/",
+  },
+  Object {
+    "name": "details",
+    "path": "/details/:product",
+  },
+  Object {
+    "name": "404",
+    "path": "/404",
+  },
+]
+`;
