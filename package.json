@@ -8,7 +8,8 @@
     "dev:srv": "nodemon --watch ./dist --exec 'node ./dist/bundle.js'",
     "dev:build-server": "webpack --config webpack.config.js --mode development --watch",
     "clean": "rimraf dist && mkdir dist",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles",
+    "test:watch": "jest --detectOpenHandles --watch"
   },
   "repository": {
     "type": "git",
