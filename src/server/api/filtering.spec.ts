@@ -1,4 +1,4 @@
-import { Grocery } from "../types/Grocery";
+import { Grocery } from "../../types/Grocery";
 import { Query } from "express-serve-static-core";
 
 import fakeGroceriesData from "../mock/groceries.json";

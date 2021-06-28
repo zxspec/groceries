@@ -1,6 +1,6 @@
 import { Query } from "express-serve-static-core";
 
-import { Grocery } from "../types/Grocery";
+import { Grocery } from "../../types/Grocery";
 
 export function extractSearchPhrase(query: Query): string {
   let result = "";

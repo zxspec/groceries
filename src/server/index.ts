@@ -3,11 +3,11 @@ import dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import { cloneRouter } from "router5";
 
-import type { Grocery } from "./types/Grocery";
+import type { Grocery } from "../types/Grocery";
 import fakeGroceriesData from "./mock/groceries.json";
 import { extractSearchPhrase, filterGroceriesByName } from "./api/filtering";
 import createRouter from "../router/router";
-import contentRenderer from "./hepers/contentRenderer";
+import contentRenderer from "./helpers/contentRenderer";
 
 const ENV_PATH = path.resolve(__dirname, ".env");
 console.debug("### ENV_PATH: ", ENV_PATH);
