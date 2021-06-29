@@ -2,7 +2,7 @@ const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 
 module.exports = {
   mode: isDev ? "development" : "production",
-  devtool: "inline-source-map",
+  devtool: "source-map",
   module: {
     rules: [
       {

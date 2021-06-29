@@ -5,7 +5,7 @@ const DIST_FOLDER = path.resolve(__dirname, "public");
 
 module.exports = {
   ...baseConfig,
-  entry: "./src/client/main.ts",
+  entry: "./src/client/main.tsx",
   target: "web",
   output: {
     filename: "bundle.js",

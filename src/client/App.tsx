@@ -1,6 +1,8 @@
 import React from "react";
 import { useRoute } from "react-router5";
 
+import HomePage from "./pages/Home";
+
 export default function App() {
   const { route } = useRoute();
 
@@ -8,7 +10,7 @@ export default function App() {
 
   switch (route.name) {
     case "home":
-      return <h1>Home Page</h1>;
+      return <HomePage />;
     case "details":
       return <h1>Details</h1>;
     default:
