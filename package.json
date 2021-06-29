@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/zxspec/groceries#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "react": "^17.0.2",
@@ -39,6 +40,7 @@
     "@types/jest": "^26.0.23",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
+    "@types/react-redux": "^7.1.16",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^5.2.6",
     "jest": "^27.0.5",
