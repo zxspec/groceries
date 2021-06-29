@@ -15,6 +15,6 @@
 14. [client] search results component
 15. [client] add details page
 16. [client] add option to render images on details page
-17. [client] add separate webpack configuration for client-side code
+17. ~~[client] add separate webpack configuration for client-side code~~
 18. configure prod build
 19. add webpackNodeExternals to webpack server config

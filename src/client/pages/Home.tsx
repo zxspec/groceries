@@ -1,5 +1,14 @@
 import React from "react";
+import { SearchBox } from "../components/SearchBox";
+import { SearchResults } from "../components/SearchResults";
 
-export const HomePage = () => <h1>This Home Page</h1>;
+import "./Home.css";
+
+export const HomePage = () => (
+  <main className="home-page">
+    <SearchBox />
+    <SearchResults />
+  </main>
+);
 
 export default HomePage;

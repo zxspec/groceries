@@ -1,0 +1,24 @@
+.searchbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .searchbox {
+    flex-wrap: nowrap;
+  }
+}
+
+.searchbox input,
+.searchbox button {
+  flex-grow: 1;
+  font-size: 32px;
+  font-family: Arial, sans-serif;
+}
+
+.searchbox button {
+  max-width: 150px;
+  cursor: pointer;
+}

@@ -21,6 +21,7 @@ export function render({ router }: Props) {
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Document</title>
+            <link rel="stylesheet" type="text/css" href="/main.css">
         </head>
         <body>
             <div id="react-root">${content}</div>
