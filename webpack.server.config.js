@@ -1,23 +1,16 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
+const baseConfig = require("./webpack.base.config");
+
 const DIST_FOLDER = path.resolve(__dirname, "dist");
 
 module.exports = {
+  ...baseConfig,
   entry: "./src/server/index.ts",
   target: "node",
-  devtool: "inline-source-map",
   output: {
     filename: "bundle.js",
     path: DIST_FOLDER,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-      },
-    ],
   },
   plugins: [
     new CopyPlugin({
@@ -26,7 +19,4 @@ module.exports = {
       ],
     }),
   ],
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
 };
