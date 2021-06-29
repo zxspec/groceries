@@ -25,6 +25,7 @@ export function render({ router }: Props) {
         <body>
             <div id="react-root">${content}</div>
         </body>
+        <script src="/bundle.js"></script>
         </html>
     `;
 }

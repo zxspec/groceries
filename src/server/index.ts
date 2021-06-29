@@ -16,6 +16,8 @@ dotenv.config({ path: ENV_PATH });
 const app = express();
 const baseRouter = createRouter();
 
+app.use(express.static(path.join(__dirname, "../public")));
+
 app.get("/api/search", (req: Request, res: Response) => {
   // const groceries: Grocery[] = ... get it from real API
   const groceries: Grocery[] = fakeGroceriesData;
