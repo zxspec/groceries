@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "npm run clean && npm-run-all --parallel dev:*",
     "dev:srv": "nodemon --watch ./dist --exec 'node ./dist/bundle.js'",
+    "dev:build-client": "webpack --config webpack.client.config.js --mode development --watch",
     "dev:build-server": "webpack --config webpack.server.config.js --mode development --watch",
-    "clean": "rimraf dist && mkdir dist",
+    "clean": "rimraf build public && mkdir public && mkdir build",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --detectOpenHandles --watch"
   },

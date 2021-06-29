@@ -3,7 +3,7 @@
 ## Quick start
 
 ```shell
-    npm run srv
+    npm run dev
 ```
 
 ## Configuration
