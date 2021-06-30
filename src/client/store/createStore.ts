@@ -1,13 +1,18 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
 import type { AxiosInstance } from "axios";
+
+const composeEnhancers =
+  (typeof window !== "undefined" &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
 
 export const createRootStore = (initialState: any, api: AxiosInstance) => {
   return createStore(
     reducers,
     initialState,
-    applyMiddleware(thunk.withExtraArgument(api))
+    composeEnhancers(applyMiddleware(thunk.withExtraArgument(api)))
   );
 };
 
