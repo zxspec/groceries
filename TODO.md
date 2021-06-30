@@ -19,3 +19,5 @@
 18. configure prod build
 19. add webpackNodeExternals to webpack server config
 20. remove `combineReducers` if not required
+21. ~~check if same createStore() helper can be used on client- and server- sides => YES~~
+22. add redux-dev-tools support
