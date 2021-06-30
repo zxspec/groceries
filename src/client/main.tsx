@@ -8,11 +8,9 @@ import { RouterProvider } from "react-router5";
 import createRouter from "../router/router";
 import { createRootStore } from "./store/createStore";
 
-
 const router = createRouter();
 const axiosInstance = axios.create({ baseURL: "/api" });
-const store = createRootStore(window.INITIAL_STATE, axiosInstance)
-);
+const store = createRootStore(window.INITIAL_STATE, axiosInstance);
 
 router.start(() => {
   ReactDOM.hydrate(
