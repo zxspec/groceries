@@ -9,7 +9,7 @@ export const fetchProducts =
     const { products } = getState();
     console.log(products);
 
-    const { data } = await api.get(`/search?fields=${searchPhrase}`);
+    const { data } = await api.get(`/search?q=${searchPhrase}`);
 
     dispatch({
       type: FETCH_PRODUCTS,
