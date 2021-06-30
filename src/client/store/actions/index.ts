@@ -1,0 +1,18 @@
+import { FETCH_PRODUCTS } from "../constants";
+
+import { AxiosInstance } from "axios";
+import type { AppDispatch, AppGetState } from "../createStore";
+
+export const fetchProducts =
+  (searchPhrase: string) =>
+  async (dispatch: AppDispatch, getState: AppGetState, api: AxiosInstance) => {
+    const { products } = getState();
+    console.log(products);
+
+    const { data } = await api.get(`/search?fields=${searchPhrase}`);
+
+    dispatch({
+      type: FETCH_PRODUCTS,
+      payload: { data },
+    });
+  };
