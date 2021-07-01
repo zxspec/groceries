@@ -25,3 +25,7 @@
 24. read search phrase from url
 25. add types to Product state
 26. remove [search] button and add search icon to input
+27. check option 1: browser url with search parameter
+28. check option 2: store search parameter in local storage
+29. sanitize search input
+30. sanitize search results

@@ -6,6 +6,7 @@ import routes from "./routes";
 export function getBaseRouter() {
   const router = createRouter(routes, {
     defaultRoute: "404",
+    queryParamsMode: "loose",
   });
 
   router.usePlugin(browserPlugin({ useHash: false }));
