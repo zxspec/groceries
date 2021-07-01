@@ -19,10 +19,10 @@ describe("extractSearchPhrase()", () => {
 });
 
 describe("filterGroceriesByName()", () => {
-  it("should return non filtered results, if search phrase is empty", () => {
+  it("should return empty results list, if search phrase is empty", () => {
     const groceries: Grocery[] = fakeGroceriesData;
     const result = filterGroceriesByName(groceries, "");
-    expect(result).toEqual(groceries);
+    expect(result).toEqual([]);
   });
 
   it("should return filtered results, if search phrase is not empty", () => {

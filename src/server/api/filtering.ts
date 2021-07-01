@@ -17,7 +17,9 @@ export function filterGroceriesByName(
   groceries: Grocery[],
   searchPhrase: string
 ) {
-  return groceries.filter((g) =>
-    g.name.toLocaleLowerCase().includes(searchPhrase.toLocaleLowerCase())
+  return groceries.filter(
+    (g) =>
+      searchPhrase &&
+      g.name.toLocaleLowerCase().includes(searchPhrase.toLocaleLowerCase())
   );
 }
