@@ -21,7 +21,7 @@
 20. remove `combineReducers` if not required
 21. ~~check if same createStore() helper can be used on client- and server- sides => YES~~
 22. ~~add redux-dev-tools support~~
-23. extract `store` and `axiosInstance` from `contentRenderer()`
+23. ~~extract `store` and `axiosInstance` from `contentRenderer()`~~
 24. ~~read search phrase from url~~
 25. add types to Product state
 26. ~~remove [search] button and add search icon to input -> NO~~

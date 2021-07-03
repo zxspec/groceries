@@ -2,12 +2,15 @@ import path from "path";
 import dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import { cloneRouter } from "router5";
+import axios from "axios";
 
 import type { Grocery } from "../types";
 import fakeGroceriesData from "./mock/groceries.json";
 import { extractSearchPhrase, filterGroceriesByName } from "./api/filtering";
 import createRouter from "../router/router";
 import { render } from "./helpers/contentRenderer";
+// import { preloadData } from "./helpers/preloadData";
+import { createRootStore } from "../client/store/createStore";
 
 const ENV_PATH = path.resolve(__dirname, ".env");
 console.debug("### ENV_PATH: ", ENV_PATH);
@@ -15,6 +18,7 @@ dotenv.config({ path: ENV_PATH });
 
 const app = express();
 const baseRouter = createRouter();
+const axiosInstance = axios.create({ baseURL: "/api" });
 
 app.use(express.static(path.join(__dirname, "../public")));
 
@@ -36,7 +40,9 @@ app.get("*", (req: Request, res: Response) => {
     if (error) {
       res.status(500).send(error);
     } else {
-      const content = render({ router });
+      const INITIAL_STORE = {}; // TODO preload data
+      const store = createRootStore(INITIAL_STORE, axiosInstance);
+      const content = render({ router, store });
       res.set("content-type", "text/html");
       res.send(content);
     }

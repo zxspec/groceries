@@ -1,19 +1,14 @@
-import axios from "axios";
 import React from "react";
+import { Store } from "redux";
 import { Router } from "router5";
 import { Provider } from "react-redux";
 import { RouterProvider } from "react-router5";
 import { renderToString } from "react-dom/server";
 
 import App from "../../client/App";
-import { createRootStore } from "../../client/store/createStore";
 
-type Props = { router: Router };
-export function render({ router }: Props) {
-  // TODO migrate one level up
-  const axiosInstance = axios.create({ baseURL: "/api" });
-  const store = createRootStore({}, axiosInstance);
-
+type Props = { router: Router; store: Store };
+export function render({ router, store }: Props) {
   const AppWithRouter = (
     <RouterProvider router={router}>
       <Provider store={store}>
@@ -23,7 +18,7 @@ export function render({ router }: Props) {
   );
 
   const content = renderToString(AppWithRouter);
-
+  // TODO inject initial store in HTML below
   return `
         <!DOCTYPE html>
         <html lang="en">
