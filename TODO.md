@@ -29,7 +29,7 @@
 28. ~~check option 2: store search parameter in local storage -> NO~~
 29. sanitize search input
 30. ~~sanitize search results~~
-31. wrap input in <form> and allow to search without JS
+31. ~~wrap input in <form> and allow to search without JS~~
 32. add `Helmet`
 33. ~~preload data on server-side~~
 34. ~~use `window.INITIAL_STATE` on client side~~

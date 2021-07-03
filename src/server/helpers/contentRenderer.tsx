@@ -19,7 +19,6 @@ export function render({ router, store }: Props) {
   );
 
   const content = renderToString(AppWithRouter);
-  // TODO inject initial store in HTML below
   return `
         <!DOCTYPE html>
         <html lang="en">

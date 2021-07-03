@@ -12,9 +12,7 @@ export const SearchBox = () => {
   const [searchValue, setSearchValue] = useState(initialSearchValue);
 
   useEffect(() => {
-    if (window.INITIAL_STATE?.products) {
-      window.INITIAL_STATE.products = undefined;
-    } else {
+    if (!window.INITIAL_STATE?.products) {
       dispatch(fetchProducts(searchValue));
     }
   }, []);
@@ -27,15 +25,15 @@ export const SearchBox = () => {
   };
 
   return (
-    <div className="searchbox">
+    <form className="searchbox">
       <input
         type="text"
-        name="search"
+        name="q"
         value={searchValue}
         placeholder="Type something in"
         onChange={onChangeHandler}
       />
       <button>Search</button>
-    </div>
+    </form>
   );
 };
