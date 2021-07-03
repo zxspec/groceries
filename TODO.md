@@ -28,12 +28,12 @@
 27. ~~check option 1: browser url with search parameter -> YES~~
 28. ~~check option 2: store search parameter in local storage -> NO~~
 29. sanitize search input
-30. sanitize search results
+30. ~~sanitize search results~~
 31. wrap input in <form> and allow to search without JS
 32. add `Helmet`
-33. preload data on server-side
-34. use `window.INITIAL_STATE` on client side
+33. ~~preload data on server-side~~
+34. ~~use `window.INITIAL_STATE` on client side~~
 35. use `router.replaceHistoryState(name, params)`
 36. ~~fix 404 favicon issue~~
 37. inject router state into a page during SSR
-38. inject redux store initial state into a page during SSR
+38. ~~inject redux store initial state into a page during SSR~~

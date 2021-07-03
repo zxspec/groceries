@@ -4,13 +4,12 @@ import { Router } from "router5";
 import { Provider } from "react-redux";
 import { RouterProvider } from "react-router5";
 import { renderToString } from "react-dom/server";
+import serialize from "serialize-javascript";
 
 import App from "../../client/App";
 
 type Props = { router: Router; store: Store };
 export function render({ router, store }: Props) {
-  const INITIAL_STATE = store.getState() ?? {};
-
   const AppWithRouter = (
     <RouterProvider router={router}>
       <Provider store={store}>
@@ -33,7 +32,7 @@ export function render({ router, store }: Props) {
             <div id="react-root">${content}</div>
         </body>
         <script>
-          window.INITIAL_STATE=${JSON.stringify(INITIAL_STATE)}
+          window.INITIAL_STATE=${serialize(store.getState())}
         </script>
         <script src="/bundle.js"></script>
         </html>
