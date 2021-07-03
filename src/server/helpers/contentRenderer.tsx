@@ -9,6 +9,8 @@ import App from "../../client/App";
 
 type Props = { router: Router; store: Store };
 export function render({ router, store }: Props) {
+  const INITIAL_STATE = store.getState() ?? {};
+
   const AppWithRouter = (
     <RouterProvider router={router}>
       <Provider store={store}>
@@ -30,6 +32,9 @@ export function render({ router, store }: Props) {
         <body>
             <div id="react-root">${content}</div>
         </body>
+        <script>
+          window.INITIAL_STATE=${JSON.stringify(INITIAL_STATE)}
+        </script>
         <script src="/bundle.js"></script>
         </html>
     `;

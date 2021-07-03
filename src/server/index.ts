@@ -9,22 +9,23 @@ import fakeGroceriesData from "./mock/groceries.json";
 import { extractSearchPhrase, filterGroceriesByName } from "./api/filtering";
 import createRouter from "../router/router";
 import { render } from "./helpers/contentRenderer";
-// import { preloadData } from "./helpers/preloadData";
+import { preloadData } from "./helpers/preloadData";
 import { createRootStore } from "../client/store/createStore";
 
 const ENV_PATH = path.resolve(__dirname, ".env");
 console.debug("### ENV_PATH: ", ENV_PATH);
 dotenv.config({ path: ENV_PATH });
 
+const PORT = process.env.PORT || 9999;
+
 const app = express();
 const baseRouter = createRouter();
-const axiosInstance = axios.create({ baseURL: "/api" });
+const axiosInstance = axios.create({ baseURL: `http://localhost:${PORT}/api` });
 
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.get("/api/search", (req: Request, res: Response) => {
-  // const groceries: Grocery[] = ... get it from real API
-  const groceries: Grocery[] = fakeGroceriesData;
+  const groceries: Grocery[] = fakeGroceriesData; // or get it asynchronously from real API
 
   const searchPhrase = extractSearchPhrase(req.query);
   const data = filterGroceriesByName(groceries, searchPhrase);
@@ -36,12 +37,18 @@ app.get("/api/search", (req: Request, res: Response) => {
 app.get("*", (req: Request, res: Response) => {
   const router = cloneRouter(baseRouter);
 
-  router.start(req.originalUrl, function done(error, state) {
+  router.start(req.originalUrl, async function done(error, route) {
     if (error) {
       res.status(500).send(error);
     } else {
-      const INITIAL_STORE = {}; // TODO preload data
-      const store = createRootStore(INITIAL_STORE, axiosInstance);
+      const store = createRootStore({}, axiosInstance);
+
+      try {
+        await preloadData(route, store.dispatch);
+      } catch (e) {
+        console.error("### preloadData error: ", e);
+      }
+
       const content = render({ router, store });
       res.set("content-type", "text/html");
       res.send(content);
@@ -49,7 +56,6 @@ app.get("*", (req: Request, res: Response) => {
   });
 });
 
-const PORT = process.env.PORT || 9999;
 app.listen(PORT, () =>
   console.log(`### Server started http://localhost:${PORT}`)
 );

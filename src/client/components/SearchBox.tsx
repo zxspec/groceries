@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useRoute } from "react-router5";
 
@@ -10,6 +10,14 @@ export const SearchBox = () => {
   const { route } = useRoute();
   const initialSearchValue = route.params.q ?? "";
   const [searchValue, setSearchValue] = useState(initialSearchValue);
+
+  useEffect(() => {
+    if (window.INITIAL_STATE?.products) {
+      window.INITIAL_STATE.products = undefined;
+    } else {
+      dispatch(fetchProducts(searchValue));
+    }
+  }, []);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
