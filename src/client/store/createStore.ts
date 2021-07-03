@@ -18,7 +18,7 @@ export const createRootStore = (initialState: any, api: AxiosInstance) => {
 
 export default createRootStore;
 
-type RootStore = ReturnType<typeof createRootStore>;
+export type RootStore = ReturnType<typeof createRootStore>;
 export type AppDispatch = RootStore["dispatch"];
 export type AppGetState = RootStore["getState"];
 export type AppState = ReturnType<AppGetState>;

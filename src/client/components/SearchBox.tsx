@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useRouter, useRoute } from "react-router5";
+import { useRoute } from "react-router5";
 
 import { fetchProducts } from "../store/actions";
 import "./SearchBox.css";
