@@ -1,4 +1,10 @@
 export * from "./Grocery";
+export type {
+  RootStore,
+  AppDispatch,
+  AppGetState,
+  AppState,
+} from "../client/store/createStore";
 
 declare global {
   interface Window {
