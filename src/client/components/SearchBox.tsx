@@ -15,6 +15,7 @@ export const SearchBox = () => {
     const newValue = e.target.value;
     setSearchValue(newValue);
     dispatch(fetchProducts(newValue));
+    window.history.replaceState(null, "Grocery Search", `/?q=${newValue}`);
   };
 
   return (

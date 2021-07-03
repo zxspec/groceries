@@ -29,3 +29,6 @@
 28. check option 2: store search parameter in local storage
 29. sanitize search input
 30. sanitize search results
+31. wrap input in <form> and allow to search without JS
+32. add `Helmet`
+33. use `window.INITIAL_STATE`
