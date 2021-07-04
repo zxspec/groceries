@@ -2,7 +2,7 @@
 1. use [fork-ts-checker-webpack-plugin](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin) to optimise build performance
 2. ~~copy `.env` file to `./dist` folder~~
 3. ~~move `.env` files to `./settings` folder~~
-4. handle 404
+4. ~~handle 404~~
 5. handle 5xx errors
 6. ~~optimize router [peformance](https://router5.js.org/advanced/universal-routing#performance)~~
 7. ~~move filtering to `server/api` folder~~
@@ -13,8 +13,8 @@
 12. ~~[client] add start page with search~~
 13. [client] add `enzyme` for testing components
 14. ~~[client] search results component~~
-15. [client] add details page
-16. [client] add option to render images on details page
+15. ~~[client] add details page~~
+16. ~~[client] add option to render images on details page~~
 17. ~~[client] add separate webpack configuration for client-side code~~
 18. configure prod build
 19. add webpackNodeExternals to webpack server config

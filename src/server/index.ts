@@ -9,6 +9,7 @@ import fakeGroceriesData from "./mock/groceries.json";
 import { extractSearchPhrase, filterGroceriesByName } from "./api/filtering";
 import createRouter from "../router/router";
 import { render } from "./helpers/contentRenderer";
+import { getStatusCode } from "./helpers/getStatusCode";
 import { preloadData } from "./helpers/preloadData";
 import { createRootStore } from "../client/store/createStore";
 
@@ -50,8 +51,9 @@ app.get("*", (req: Request, res: Response) => {
       }
 
       const content = render({ router, store });
+
       res.set("content-type", "text/html");
-      res.send(content);
+      res.status(getStatusCode(route.name)).send(content);
     }
   });
 });
