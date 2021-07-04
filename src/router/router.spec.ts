@@ -32,6 +32,7 @@ describe("getBaseRouter", () => {
     getBaseRouter();
     expect(createRouter).toHaveBeenCalledTimes(1);
     expect(createRouter).toHaveBeenCalledWith(expect.anything(), {
+      queryParamsMode: "loose",
       defaultRoute: "404",
     });
   });
