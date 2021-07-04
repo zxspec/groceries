@@ -17,7 +17,7 @@ const ENV_PATH = path.resolve(__dirname, ".env");
 console.debug("### ENV_PATH: ", ENV_PATH);
 dotenv.config({ path: ENV_PATH });
 
-const PORT = process.env.PORT || 9999;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 const baseRouter = createRouter();

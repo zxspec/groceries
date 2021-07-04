@@ -6,7 +6,15 @@ It uses `router5` for client- and server- side routing. `Redux` is being used to
 ## Quick start
 
 ```shell
+    npm install
+    npm run start
+```
+
+## Development mode
+
+```shell
     npm run dev
+    open http://localhost:8080
 ```
 
 ## Configuration
