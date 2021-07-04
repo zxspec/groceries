@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useRoute } from "react-router5";
+import { useRoute, useRouter } from "react-router5";
 
 import { fetchProducts } from "../store/actions";
 import "./SearchBox.css";
@@ -8,6 +8,7 @@ import "./SearchBox.css";
 export const SearchBox = () => {
   const dispatch = useDispatch();
   const { route } = useRoute();
+  const router = useRouter();
   const initialSearchValue = route.params.q ?? "";
   const [searchValue, setSearchValue] = useState(initialSearchValue);
 
@@ -21,7 +22,7 @@ export const SearchBox = () => {
     const newValue = e.target.value;
     setSearchValue(newValue);
     dispatch(fetchProducts(newValue));
-    window.history.replaceState(null, "Grocery Search", `/?q=${newValue}`);
+    router.replaceHistoryState("home", { q: newValue });
   };
 
   return (

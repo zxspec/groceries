@@ -33,7 +33,7 @@
 32. add `Helmet`
 33. ~~preload data on server-side~~
 34. ~~use `window.INITIAL_STATE` on client side~~
-35. use `router.replaceHistoryState(name, params)`
+35. ~~use `router.replaceHistoryState(name, params)`~~
 36. ~~fix 404 favicon issue~~
 37. inject router state into a page during SSR
 38. ~~inject redux store initial state into a page during SSR~~
