@@ -4,7 +4,12 @@
   "description": "Groceries Search",
   "private": true,
   "scripts": {
-    "dev": "npm run clean && npm-run-all --parallel dev:*",
+    "start": "npm-run-all build serve",
+    "build": "npm-run-all clean --parallel prod:*",
+    "prod:build-client": "webpack --config webpack.client.config.js --mode production",
+    "prod:build-server": "webpack --config webpack.server.config.js --mode production",
+    "serve": "node ./dist/bundle.js",
+    "dev": "npm-run-all clean --parallel dev:*",
     "dev:srv": "nodemon --watch ./dist --exec 'node ./dist/bundle.js'",
     "dev:build-client": "webpack --config webpack.client.config.js --mode development --watch",
     "dev:build-server": "webpack --config webpack.server.config.js --mode development --watch",
