@@ -1,5 +1,7 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
+const nodeExternals = require("webpack-node-externals");
+
 const baseConfig = require("./webpack.base.config");
 
 const DIST_FOLDER = path.resolve(__dirname, "dist");
@@ -20,4 +22,6 @@ module.exports = {
     path: DIST_FOLDER,
   },
   plugins,
+  externalsPresets: { node: true }, // in order to ignore built-in modules like path, fs, etc.
+  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
 };
