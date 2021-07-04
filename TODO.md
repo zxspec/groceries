@@ -37,3 +37,4 @@
 36. ~~fix 404 favicon issue~~
 37. inject router state into a page during SSR
 38. ~~inject redux store initial state into a page during SSR~~
+39. ~~preload product details data on server-side~~
