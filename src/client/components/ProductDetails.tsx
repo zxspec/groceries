@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { AppState } from "../store/createStore";
 import { Grocery } from "../../types";
 import { ProductImages } from "./ProductImages";
+import { ProductExtraInfo } from "./ProductExtraInfo";
 
 export const ProductDetails = () => {
   const { route } = useRoute();
@@ -22,10 +23,11 @@ export const ProductDetails = () => {
     <div className="product-details">
       <h1>{product.name}</h1>
       <p>{product.description}</p>
+      <br />
       {product.images ? (
         <ProductImages images={product.images} />
       ) : (
-        "additional prouct data component should be here "
+        <ProductExtraInfo extras={product.additionalInformation} />
       )}
     </div>
   ) : null;
