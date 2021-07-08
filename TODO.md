@@ -39,7 +39,7 @@
 37. inject router state into a page during SSR
 38. ~~inject redux store initial state into a page during SSR~~
 39. ~~preload product details data on server-side~~
-40. optimize front-end bundle
+40. ~~optimize front-end bundle~~
 41. ~~mock non-JS assets for Jest~~
 42. ~~fix `contentRenderer` tests~~
 43. add E2E-test, `cypress` or `playwright`

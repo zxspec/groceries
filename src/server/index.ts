@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import { cloneRouter } from "router5";
 import axios from "axios";
+import expressStaticGzip from "express-static-gzip";
 
 import type { Grocery } from "../types";
 import fakeGroceriesData from "./mock/groceries.json";
@@ -23,7 +24,12 @@ const app = express();
 const baseRouter = createRouter();
 const axiosInstance = axios.create({ baseURL: `http://localhost:${PORT}/api` });
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(
+  expressStaticGzip(path.join(__dirname, "../public"), {
+    enableBrotli: true,
+    orderPreference: ["br", "gz"],
+  })
+);
 
 app.get("/api/search", (req: Request, res: Response) => {
   const groceries: Grocery[] = fakeGroceriesData; // or get it asynchronously from real API
